@@ -31,6 +31,7 @@ function addSpend(e){
         }else{
             objGSpend.data = date();
             spend.editSpend({...objGSpend});
+            formSpend.querySelector('button[type="submit"]').textContent = "Agregar";
             ui.message('Se ha editado Correctamente','correcto');
         };
         setStorageSpends(spend.allSpends);
