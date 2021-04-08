@@ -32,22 +32,23 @@ $colorGrisOscuro: #cccccc;
 .btn.submit {
     background: rgb(0, 132, 255);
 }
-.message{
+.message {
     position: fixed;
     top: 1vh;
-    margin: auto;
+    left: 50%;
+    transform: translateX(-50%);
     padding: 15px;
     font-size: 1.2rem;
     border-radius: 15px;
     @include shadeBox();
     color: white;
 }
-.message.incorrecto{
+.message.incorrecto {
     background: rgb(255, 0, 0);
-};
-.message.correcto{
+}
+.message.correcto {
     background: rgb(0, 255, 0);
-};
+}
 //Styles
 body {
     height: 100vh;
@@ -91,7 +92,7 @@ body {
                                 margin: 10px 0;
                                 //Selectores
                                 .ctn-input-text {
-                                    input{
+                                    input {
                                         width: 100%;
                                         font-size: 1rem;
                                         border: none;
@@ -165,7 +166,7 @@ body {
                                 display: flex;
                                 align-items: center;
                                 flex-direction: column;
-                                gap:5px 0;
+                                gap: 5px 0;
                                 .left-category {
                                     background: rgb(0, 132, 255);
                                     padding: 5px;
@@ -193,12 +194,12 @@ body {
                                 }
                             }
                         }
-                        .ctn-allspends{
+                        .ctn-allspends {
                             max-height: 250px;
                             overflow-y: auto;
-                            .spends{
+                            .spends {
                                 padding: 0 10px;
-                                .item-spend{
+                                .item-spend {
                                     position: relative;
                                     margin: 10px 0;
                                     border-radius: 20px;
@@ -207,8 +208,8 @@ body {
                                     display: flex;
                                     justify-content: space-between;
                                     align-items: center;
-                                    gap:0 10px;
-                                    .text-descrip{
+                                    gap: 0 10px;
+                                    .text-descrip {
                                         background: $colorBlanco;
                                         text-align: center;
                                         padding: 10px;
@@ -218,18 +219,18 @@ body {
                                         justify-items: center;
                                         gap: 0 10px;
                                         @include shadeBox();
-                                        .img{
+                                        .img {
                                             background: $colorBlanco;
                                             padding: 10px;
                                             font-size: 2rem;
                                             border-radius: 5px;
                                         }
-                                        p{
-                                            &:nth-child(2){
+                                        p {
+                                            &:nth-child(2) {
                                                 font-weight: bolder;
-                                            align-self: center;
+                                                align-self: center;
                                             }
-                                            &:nth-child(3){
+                                            &:nth-child(3) {
                                                 background: $colorGrisOscuro;
                                                 padding: 10px;
                                                 border-radius: 10px;
@@ -237,13 +238,13 @@ body {
                                             }
                                         }
                                     }
-                                    p{
-                                        &:nth-child(2){
+                                    p {
+                                        &:nth-child(2) {
                                             background: $colorBlanco;
                                             border-radius: 10px;
                                             align-self: flex-end;
                                             padding: 10px;
-                                            span{
+                                            span {
                                                 background: rgb(0, 132, 255);
                                                 color: white;
                                                 padding: 5px 8px;
@@ -252,17 +253,17 @@ body {
                                             }
                                         }
                                     }
-                                    .btnEliminar{
+                                    .btnEliminar {
                                         position: absolute;
                                         top: 5%;
-                                        right: 2%;
+                                        right: 5px;
                                     }
-                                    .btnEditar{
+                                    .btnEditar {
                                         position: absolute;
                                         top: 5%;
-                                        right: 15%;
+                                        right: 60px;
                                     }
-                                    .spendDate{
+                                    .spendDate {
                                         background: white;
                                         margin: 5px 0;
                                         text-align: center;
@@ -278,11 +279,11 @@ body {
             }
         }
     }
-    footer{
+    footer {
         position: fixed;
         bottom: 0;
         left: 0;
-        p{
+        p {
             padding: 10px;
         }
     }
@@ -338,7 +339,7 @@ body {
                                 }
                             }
                         }
-                        .ctn-btn-submit{
+                        .ctn-btn-submit {
                             margin: 10px 0;
                         }
                     }
@@ -366,6 +367,44 @@ body {
                     }
                 }
             }
+        }
+    }
+}
+@media (max-width: 414px) {
+    body {
+        .container {
+            margin-bottom: 40px;
+            .ctn-app {
+                .ctn-columns-app {
+                    .ctn-categories {
+                        .ctn-spends {
+                            height: 100%;
+                            display: block;
+                            .categories {
+                                max-height: none;
+                                grid-template-columns: 1fr 1fr;
+                                overflow-y: initial;
+                                .ctn-category {
+                                    margin: 2px 0;
+                                    border-radius: 10px;
+                                    padding: 5px;
+                                    gap: 2px 0;
+                                    .left-category {
+                                        .img {
+                                            font-size: 1.3rem;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        footer{
+            width: 100%;
+            text-align: center;
+            background: $colorBlanco;
         }
     }
 }
