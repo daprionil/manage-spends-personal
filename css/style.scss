@@ -1,0 +1,371 @@
+//variables
+$colorBlanco: #efefef;
+$colorGris: #dfdfdf;
+$colorGrisOscuro: #cccccc;
+//Mixins
+@mixin shadeBox() {
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+}
+//Class Global
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Quicksand";
+}
+.btn {
+    border: none;
+    outline: none;
+    padding: 10px 15px;
+    border-radius: 10px;
+    @include shadeBox();
+    color: white;
+    cursor: pointer;
+    font-size: 1rem;
+}
+.btn.green {
+    background: rgb(0, 255, 0);
+}
+.btn.red {
+    background: rgb(255, 0, 0);
+}
+.btn.submit {
+    background: rgb(0, 132, 255);
+}
+.message{
+    position: fixed;
+    top: 1vh;
+    margin: auto;
+    padding: 15px;
+    font-size: 1.2rem;
+    border-radius: 15px;
+    @include shadeBox();
+    color: white;
+}
+.message.incorrecto{
+    background: rgb(255, 0, 0);
+};
+.message.correcto{
+    background: rgb(0, 255, 0);
+};
+//Styles
+body {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .container {
+        @include shadeBox();
+        width: 100%;
+        max-width: 1000px;
+        border-radius: 15px;
+        overflow: hidden;
+        background: $colorBlanco;
+        .ctn-app {
+            .title-app {
+                padding: 15px;
+                background: $colorGris;
+                text-align: center;
+                font-size: 1rem;
+            }
+            .ctn-columns-app {
+                height: 100%;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                padding: 15px;
+                .form-app {
+                    border-right: 2px solid $colorGris;
+                    padding-right: 10px;
+                    .title-form {
+                        h3 {
+                            font-size: 1.5rem;
+                        }
+                        p {
+                            font-size: 0.8rem;
+                        }
+                    }
+                    .ctn-form {
+                        .fromApp {
+                            .ctn-select-type-spend {
+                                margin: 10px 0;
+                                //Selectores
+                                .ctn-input-text {
+                                    input{
+                                        width: 100%;
+                                        font-size: 1rem;
+                                        border: none;
+                                        border-radius: 15px;
+                                        padding: 10px;
+                                        outline: none;
+                                        margin: 5px 0;
+                                        border: 2px solid $colorBlanco;
+                                        transition: border 0.3s;
+                                        &:focus {
+                                            border: 2px solid $colorGrisOscuro;
+                                        }
+                                    }
+                                    input::-webkit-outer-spin-button,
+                                    input::-webkit-inner-spin-button {
+                                        -webkit-appearance: none;
+                                        margin: 0;
+                                    }
+                                    input[type="number"] {
+                                        -moz-appearance: textfield;
+                                        text-align: center;
+                                        font-size: 2rem;
+                                    }
+                                    .selects {
+                                        select {
+                                            padding: 10px 15px;
+                                            background: $colorGrisOscuro;
+                                            border-radius: 10px;
+                                            border: none;
+                                            outline: none;
+                                            font-size: 1.2rem;
+                                            option {
+                                                font-size: 1rem;
+                                                background: $colorBlanco;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .ctn-categories {
+                    height: 100%;
+                    .ctn-title {
+                        p {
+                            padding: 5px 15px;
+                            &:nth-child(1) {
+                                text-align: center;
+                                font-size: 1.5rem;
+                                font-weight: bolder;
+                            }
+                        }
+                    }
+                    .ctn-spends {
+                        height: 100%;
+                        padding: 0 15px;
+                        height: 100%;
+                        .categories {
+                            max-height: 250px;
+                            overflow-y: auto;
+                            border-bottom: 2px solid $colorGris;
+                            display: grid;
+                            grid-template-columns: 1fr 1fr 1fr;
+                            gap: 1px 4px;
+                            .ctn-category {
+                                margin: 5px 0;
+                                border-radius: 15px;
+                                background: $colorGris;
+                                padding: 10px;
+                                display: flex;
+                                align-items: center;
+                                flex-direction: column;
+                                gap:5px 0;
+                                .left-category {
+                                    background: rgb(0, 132, 255);
+                                    padding: 5px;
+                                    border-radius: 10px;
+                                    display: flex;
+                                    justify-content: space-around;
+                                    align-items: center;
+                                    color: white;
+                                    font-weight: bolder;
+                                    @include shadeBox();
+                                    .img {
+                                        font-size: 2rem;
+                                    }
+                                }
+                                .totalSpend {
+                                    span {
+                                        background: rgb(255, 0, 0);
+                                        color: white;
+                                        font-weight: bolder;
+                                        padding: 2px 5px;
+                                        border-radius: 10px;
+                                        text-align: center;
+                                        margin-left: 5px;
+                                    }
+                                }
+                            }
+                        }
+                        .ctn-allspends{
+                            max-height: 250px;
+                            overflow-y: auto;
+                            .spends{
+                                padding: 0 10px;
+                                .item-spend{
+                                    position: relative;
+                                    margin: 10px 0;
+                                    border-radius: 20px;
+                                    background: $colorGris;
+                                    padding: 10px;
+                                    display: flex;
+                                    justify-content: space-between;
+                                    align-items: center;
+                                    gap:0 10px;
+                                    .text-descrip{
+                                        background: $colorBlanco;
+                                        text-align: center;
+                                        padding: 10px;
+                                        border-radius: 10px;
+                                        display: flex;
+                                        flex-wrap: wrap;
+                                        justify-items: center;
+                                        gap: 0 10px;
+                                        @include shadeBox();
+                                        .img{
+                                            background: $colorBlanco;
+                                            padding: 10px;
+                                            font-size: 2rem;
+                                            border-radius: 5px;
+                                        }
+                                        p{
+                                            &:nth-child(2){
+                                                font-weight: bolder;
+                                            align-self: center;
+                                            }
+                                            &:nth-child(3){
+                                                background: $colorGrisOscuro;
+                                                padding: 10px;
+                                                border-radius: 10px;
+                                                align-self: center;
+                                            }
+                                        }
+                                    }
+                                    p{
+                                        &:nth-child(2){
+                                            background: $colorBlanco;
+                                            border-radius: 10px;
+                                            align-self: flex-end;
+                                            padding: 10px;
+                                            span{
+                                                background: rgb(0, 132, 255);
+                                                color: white;
+                                                padding: 5px 8px;
+                                                margin-left: 5px;
+                                                border-radius: 10px;
+                                            }
+                                        }
+                                    }
+                                    .btnEliminar{
+                                        position: absolute;
+                                        top: 5%;
+                                        right: 2%;
+                                    }
+                                    .btnEditar{
+                                        position: absolute;
+                                        top: 5%;
+                                        right: 15%;
+                                    }
+                                    .spendDate{
+                                        background: white;
+                                        margin: 5px 0;
+                                        text-align: center;
+                                        padding: 5px;
+                                        border-radius: 10px;
+                                        font-weight: bolder;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    footer{
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        p{
+            padding: 10px;
+        }
+    }
+}
+//Media Queries
+@media (max-width: 768px) {
+    body {
+        width: auto;
+        height: auto;
+        display: block;
+        .container {
+            max-height: none;
+            .ctn-app {
+                height: 100%;
+                .ctn-columns-app {
+                    height: 100%;
+                    display: grid;
+                    grid-template-columns: 1fr;
+                    padding: 10px;
+                    .form-app {
+                        border: none;
+                        border-bottom: 2px solid $colorGris;
+                        padding-right: 0;
+                        .title-form {
+                            h3 {
+                                font-size: 1.1rem;
+                            }
+                            p {
+                                font-size: 0.7rem;
+                            }
+                        }
+                        .ctn-form {
+                            .fromApp {
+                                .ctn-select-type-spend {
+                                    margin: 10px 0;
+                                    //Selectores
+                                    .ctn-input-text {
+                                        input[type="number"] {
+                                            font-size: 1.5rem;
+                                        }
+                                        textarea {
+                                            max-height: 60px;
+                                        }
+                                        .selects {
+                                            select {
+                                                font-size: 1rem;
+                                                option {
+                                                    font-size: 0.8rem;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        .ctn-btn-submit{
+                            margin: 10px 0;
+                        }
+                    }
+                    .ctn-categories {
+                        .ctn-title {
+                            p {
+                                &:nth-child(1) {
+                                    font-size: 1.2rem;
+                                }
+                            }
+                        }
+                        .ctn-spends {
+                            height: 100%;
+                            display: block;
+                            .categories {
+                                .ctn-category {
+                                    .left-category {
+                                        .img {
+                                            font-size: 1.5rem;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🧾|Manage Spends Personal - David Bulla</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="ctn-app">
+            <div class="title-app">
+                <h2>Administra tus Gastos</h2>
+            </div>
+            <div class="ctn-columns-app">
+                <div class="form-app">
+                    <div class="title-form">
+                        <h3>¡Agrega Un Gasto!</h3>
+                        <p>Añade gastos y controla tu dinero</p>
+                    </div>
+                    <div class="ctn-form">
+                        <form action="" id="formSpends" class="fromApp">
+                            <div class="ctn-select-type-spend">
+                                <div class="ctn-input-text">
+                                    <input type="text" name="nameSpend" id="nameSpend" placeholder="Nombre del Gasto">
+                                    <div class="selects">
+                                        <select name="typeSpend" id="typeSpend">
+                                            <option value="">Seleccionar Tipo</option>
+                                            <option value="ropa">👕 Ropa </option>
+                                            <option value="salud">🩺 Salud e Higiene</option>
+                                            <option value="compras">🛍️ Compras</option>
+                                            <option value="diversion">🎡 Diversion</option>
+                                            <option value="comida">🌮 Comida</option>
+                                            <option value="pagos">💳 Pagos</option>
+                                        </select>
+                                    </div>
+                                    <input type="number" placeholder="$0.00" id="priceSpend" name="priceSpend">
+                                </div>
+                            </div>
+                            <div class="ctn-btn-submit">
+                                <button type="submit" class="btn submit" id="btnSubmit">Agregar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="ctn-categories">
+                    <div class="ctn-title">
+                        <p>Gastos</p>
+                        <p>Gastos por Categoría</p>
+                    </div>
+                    <div class="ctn-spends">
+                        <div class="categories" id="categoriesBox">
+                            <div class="ctn-category">
+                                <div class="left-category">
+                                    <p class="img">👕</p>
+                                    <p class="nameCategory">Ropa</p>
+                                </div>
+                                <p class="totalSpend">Gastado:<span>800</span></p>
+                            </div>
+                        </div>
+                        <div class="ctn-allspends">
+                            <p>Todos Los Gastos</p>
+                            <div class="spends" id="allSpends"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; Derechos Reservados David Bulla <span></span></p>
+    </footer>
+    
+    <script src="js/app.js" type="module"></script>
+</body>
+
+</html>
