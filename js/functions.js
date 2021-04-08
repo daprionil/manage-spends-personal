@@ -13,7 +13,7 @@ let mode = false;
 let objGSpend = {
     nameSpend:'',
     typeSpend:'',
-    priceSpend:'',
+    priceSpend:0,
     data:'',
 };
 
@@ -21,11 +21,10 @@ function addSpend(e){
     e.preventDefault();
 
     const {nameSpend,typeSpend,priceSpend} = objGSpend;
-    if(!(nameSpend === '' || typeSpend === '' || priceSpend < 0)){
+    if(!(nameSpend === '' || typeSpend === '' || priceSpend < 1)){
         if(!mode){
             objGSpend.id = Date.now();
             objGSpend.data = date();
-
             spend.addSpend({...objGSpend});
             ui.message('Agregado Correctamente','correcto');
         }else{
